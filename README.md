@@ -6,7 +6,7 @@
 
 ## What I've done so far:
 
-- [✔️] 가상 키보드
+- [x] 가상 키보드
 
 ## What I'm planning to build:
 
