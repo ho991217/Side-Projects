@@ -1,12 +1,20 @@
 # 🚂 하나하나 해보는 토이 프로젝트
 
+- 구현 언어 : Javascript ES6 Functional Programming
+- 프레임워크 : Next JS
+- 라이브러리 :
+  - react@18.0.0
+  - 
+
 ## What I'm currently working on:
 
 - ...
 
+
 ## What I've done so far:
 
 - [x] 가상 키보드
+
 
 ## What I'm planning to build:
 
