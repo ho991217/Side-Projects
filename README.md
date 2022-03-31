@@ -1,20 +1,19 @@
 # 🚂 하나하나 해보는 토이 프로젝트
 
-- 구현 언어 : Javascript ES6 Functional Programming
-- 프레임워크 : Next JS
+- 구현 언어 : Javascript ES6 Functional Programming Language
+- 프레임워크 : Next JS + TypeScript
 - 라이브러리 :
   - react@18.0.0
-  - 
+  -
 
 ## What I'm currently working on:
 
 - ...
 
-
 ## What I've done so far:
 
 - [x] 가상 키보드
-
+- [x] BMI 계산기
 
 ## What I'm planning to build:
 
@@ -29,7 +28,6 @@
 - [ ] 이미지 검색기
 - [ ] 뮤직 플레이어
 - [ ] 계산기
-- [ ] BMI 계산기
 - [ ] 메모장
 - [ ] 커서 이미지 변경
 - [ ] 프로젝트 관리 툴
