@@ -1,0 +1,92 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 1000px;
+  height: 50px;
+  font-size: 18px;
+  padding: 0 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.keyboardWrapper {
+  margin-top: 10px;
+  border-radius: 10px;
+  max-width: 1085px;
+  padding: 20px;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.06);
+  grid-template-columns: repeat(30, 30px);
+  grid-template-rows: repeat(5, 60px);
+  grid-gap: 5px;
+}
+
+.key {
+  grid-column: span 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 7px 10px;
+  border-radius: 10px;
+  text-align: center;
+  user-select: none;
+  cursor: default;
+}
+
+.key:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.backspace {
+  grid-column: span 4;
+}
+
+.tab {
+  grid-column: span 3;
+}
+
+.backslash {
+  grid-column: span 3;
+}
+
+.capslock {
+  grid-column: span 4;
+}
+
+.enter {
+  grid-column: span 4;
+}
+
+.lshift {
+  grid-column: span 5;
+}
+
+.rshift {
+  grid-column: span 5;
+}
+
+.lempty {
+  grid-column: span 8;
+}
+
+.rempty {
+  grid-column: span 6;
+}
+
+.escape {
+  grid-column: span 2;
+}
+
+.spacebar {
+  grid-column: span 14;
+}
