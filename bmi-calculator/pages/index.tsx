@@ -3,8 +3,8 @@ import { useState } from "react";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [height, setHeight] = useState<number>();
-  const [weight, setWeight] = useState<number>();
+  const [height, setHeight] = useState<number | undefined>();
+  const [weight, setWeight] = useState<number | undefined>();
 
   function calculateBmi(
     height: number | undefined,
@@ -17,21 +17,23 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className={styles.Wrapper}>
+      <div className={styles.Container}>
         <input
+          className={`${styles.Input} ${styles.InputHeight}`}
           type="number"
           placeholder="height (cm)"
           value={height}
           onChange={(e) => setHeight(Number(e.target.value))}
         />
         <input
+          className={`${styles.Input} ${styles.InputWeight}`}
           type="number"
           placeholder="weight (kg)"
           value={weight}
           onChange={(e) => setWeight(Number(e.target.value))}
         />
-        {calculateBmi(height, weight).toFixed(2)}
+        {height && weight && calculateBmi(height, weight).toFixed(2)}
       </div>
     </div>
   );
