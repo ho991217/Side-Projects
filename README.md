@@ -8,11 +8,12 @@
 
 ## What I'm currently working on:
 
-- BMI 계산기
+-
 
 ## What I've done so far:
 
 - [x] 가상 키보드
+- [x] BMI 계산기
 
 ## What I'm planning to build:
 
