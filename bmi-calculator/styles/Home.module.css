@@ -30,3 +30,67 @@
   padding: 7px 7px;
   border-radius: 10px;
 }
+
+.Tag {
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+#ResultBar {
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: grid;
+  grid-template-columns: 5fr 6.5fr 5fr 5fr;
+}
+
+.InnerBar {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  font-size: 14px;
+  color: rgb(244, 244, 244);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
+.UnderWeight {
+  background-color: #3048ff;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.Normal {
+  background-color: #28a745;
+}
+
+.OverWeight {
+  background-color: #ffdd45;
+}
+
+.Obese {
+  background-color: #dc3545;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#ResultBarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+#ResultIndicator {
+  width: 100%;
+  height: 20px;
+  position: relative;
+}
+
+#Indicator {
+  position: absolute;
+  top: -5px;
+}
