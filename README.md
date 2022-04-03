@@ -8,7 +8,7 @@
 
 ## What I'm currently working on:
 
--
+- [ ] 자료구조 시각화
 
 ## What I've done so far:
 
