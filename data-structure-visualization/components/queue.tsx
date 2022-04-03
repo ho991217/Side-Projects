@@ -1,18 +1,16 @@
 import React from "react";
-import { useState } from "react";
 import { useEffect } from "react";
-import { ReactElement } from "react";
-import styles from "../styles/Stack.module.css";
+import styles from "../styles/Queue.module.css";
 
-type StackProps = {
+type QueueProps = {
   arr: Array<number>;
   size: number;
 };
 
-const Stack: React.FC<StackProps> = ({ arr, size }) => {
+const Queue: React.FC<QueueProps> = ({ arr, size }) => {
   const renderLists = () => {
     const result = [];
-    for (let i = size - 1; i >= 0; i--) {
+    for (let i = 0; i < size; i++) {
       result.push(
         <li
           key={size - i - 1}
@@ -25,19 +23,18 @@ const Stack: React.FC<StackProps> = ({ arr, size }) => {
     }
     return result;
   };
-
   useEffect(() => {
     if (arr.length > 0) {
-      console.log("Stack: ", arr);
+      console.log("Queue: ", arr);
     }
   }, [arr]);
 
   return (
     <div id={styles.wrapper}>
-      <h1>Stack</h1>
-      <ul id={styles.stackContainer}>{renderLists()}</ul>
+      <h1>Queue</h1>
+      <ul id={styles.queueContainer}> {renderLists()}</ul>
     </div>
   );
 };
 
-export default Stack;
+export default Queue;
