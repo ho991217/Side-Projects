@@ -29,7 +29,7 @@
   display: grid;
   background-color: rgba(0, 0, 0, 0.06);
   grid-template-columns: repeat(30, 30px);
-  grid-template-rows: repeat(5, 60px);
+  grid-template-rows: repeat(55, 60px);
   grid-gap: 5px;
 }
 
