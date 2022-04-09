@@ -3,25 +3,35 @@ import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 
 let stack: string[] = [];
 
 const Home: NextPage = () => {
   const constraintsRef = useRef(null);
-  const [currentNumber, setCurrentNumber] = useState(0);
+  const [currentNumber, setCurrentNumber] = useState<number>(0);
+  const [toggleFloat, setToggleFloat] = useState(false);
 
   const Calculate = (event: any) => {
     const classes = event.target.classList.value;
     const peek = stack[stack.length - 1];
 
     if (classes.indexOf("operand") >= 0) {
-      if (event.target.id === ".") {
-        //
+      if (event.target.id === "." && !toggleFloat) {
+        setCurrentNumber((prev) => parseFloat(prev.toFixed(1) + ".0"));
+        setToggleFloat(true);
+      } else if (event.target.id === "." && toggleFloat) {
+        // bypass
       } else {
         if (currentNumber === 0 && event.target.id === "0") {
           // bypass
-        } else {
+        } else if (!toggleFloat) {
           setCurrentNumber((prev) => Number(prev.toString() + event.target.id));
+        } else if (toggleFloat) {
+          console.log("hi");
+          setCurrentNumber((prev) =>
+            parseFloat(prev.toString() + "." + event.target.id)
+          );
         }
       }
     } else if (classes.indexOf("operator") >= 0) {
@@ -170,7 +180,11 @@ const Home: NextPage = () => {
           >
             0
           </div>
-          <div onClick={(e) => Calculate(e)} id="." className={styles.button}>
+          <div
+            onClick={(e) => Calculate(e)}
+            id="."
+            className={`${styles.button} ${styles.operand}`}
+          >
             .
           </div>
           <div
