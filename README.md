@@ -8,6 +8,7 @@
 
 ## What I'm currently working on:
 
+- [ ] 워들
 - [ ] 계산기
 
 ## What I've done so far:
@@ -45,4 +46,3 @@
 - [ ] 회원가입
 - [ ] 미니 장바구니
 - [ ] 배경 사진 검색기
-- [ ] 워들
