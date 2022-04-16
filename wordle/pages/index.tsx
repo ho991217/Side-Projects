@@ -3,21 +3,21 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import GetWords from "../components/GetWords";
 import { useState } from "react";
-import Whome from "./whome";
 
 const Home: NextPage = () => {
-  const [words, setWords] = useState<string[]>([]);
+  const [word, setWord] = useState<string>("");
 
-  // useEffect(
-  //   () => async () => {
-  //     const res = await GetWords;
-  //   },
-  //   []
-  // );
+  useEffect(() => {
+    try {
+      GetWords().then((res) => setWord(res?.data));
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
-      {/* <ul>{words && words.map((word) => <li>{word}</li>)}</ul> */}
-      <GetWords />
+      <ul>{word && word}</ul>
     </div>
   );
 };
