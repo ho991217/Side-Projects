@@ -6,6 +6,7 @@ import Keyboard from "../components/Keyboard";
 import { useRecoilState } from "recoil";
 import { currentWord } from "../states/currentWord";
 import Grid from "../components/Grid";
+import styles from "../styles/ingame.module.css";
 
 function ingame() {
   const [word, setWord] = useState<string>("");
@@ -24,11 +25,13 @@ function ingame() {
   }, []);
 
   return (
-    <div>
+    <div id={styles.wrapper}>
       {loading && <PulseLoader />}
       {curWord}
-      <Grid />
-      <Keyboard />
+      <div id={styles.container}>
+        <Grid />
+        <Keyboard />
+      </div>
     </div>
   );
 }
