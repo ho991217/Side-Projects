@@ -8,7 +8,6 @@
 
 ## What I'm currently working on:
 
-- [ ] 캐러셀
 - [ ] 워들
 - [ ] 계산기
 
@@ -17,6 +16,7 @@
 - [x] 가상 키보드
 - [x] BMI 계산기
 - [x] 자료구조 시각화
+- [x] 캐러셀
 
 ## What I'm planning to build:
 
