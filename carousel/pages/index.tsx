@@ -1,10 +1,16 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
+import Carousel, { DataArrayProps } from "../components/carousel";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const dummy: DataArrayProps[] = [
+    { id: 1, text: "first", imgUrl: "" },
+    { id: 2, text: "sec", imgUrl: "" },
+    { id: 3, text: "third", imgUrl: "" },
+  ];
+
   return (
     <div>
       <Head>
@@ -13,62 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.wrapper}>
-        <div className={styles.carouselWrapper}>
-          <div
-            style={{ transform: `translateX(${(0 - currentSlide) * 100}%)` }}
-            id={styles.first}
-            className={`${styles.slide}`}
-          >
-            1
-          </div>
-          <div
-            style={{ transform: `translateX(${(1 - currentSlide) * 100}%)` }}
-            id={styles.second}
-            className={`${styles.slide}`}
-          >
-            2
-          </div>
-          <div
-            style={{ transform: `translateX(${(2 - currentSlide) * 100}%)` }}
-            id={styles.third}
-            className={`${styles.slide}`}
-          >
-            3
-          </div>
-          <div
-            style={{ transform: `translateX(${(3 - currentSlide) * 100}%)` }}
-            id={styles.forth}
-            className={`${styles.slide}`}
-          >
-            4
-          </div>
-        </div>
-        <input
-          type="button"
-          onClick={() =>
-            setCurrentSlide((prev) => {
-              if (prev > 0) {
-                return prev - 1;
-              } else {
-                return 3;
-              }
-            })
-          }
-          value="<="
-        />
-        <input
-          type="button"
-          onClick={() =>
-            setCurrentSlide((prev) => {
-              if (prev < 3) {
-                return prev + 1;
-              } else {
-                return 0;
-              }
-            })
-          }
-          value="=>"
-        />
+        <Carousel data={dummy} />
       </div>
     </div>
   );
