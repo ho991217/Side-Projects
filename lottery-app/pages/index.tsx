@@ -9,6 +9,8 @@ const Home: NextPage = () => {
   const [myNumber, setMyNumber] = useState<number[]>([]);
   const [result, setResult] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [moneySpent, setMoneySpent] = useState<number>(0);
+  const [auto, setAuto] = useState<NodeJS.Timer>();
+  const [speed, setSpeed] = useState<number>(500);
 
   const generateLotto = (): { lotto: number[]; bonus: number } => {
     const tmp: number[] = [];
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
   const buyLotto = (): void => {
     const { lotto } = generateLotto();
     setMyNumber(lotto);
-    setMoneySpent(moneySpent + 1000);
+    setMoneySpent((prev) => prev + 1000);
     const check = Assess({ check: lotto });
     let tmp: number[] = result;
     if (check != null) {
@@ -64,6 +66,14 @@ const Home: NextPage = () => {
       tmp[5]++;
     }
     setResult(tmp);
+  };
+
+  const start = (): void => {
+    setAuto(setInterval(buyLotto, speed));
+  };
+
+  const end = (): void => {
+    clearInterval(auto);
   };
 
   useEffect(() => {
@@ -84,16 +94,48 @@ const Home: NextPage = () => {
         <div>
           당첨번호 : {lotto.join(", ")} + {bonus}
         </div>
-        <input type="button" value="번호 생성" onClick={buyLotto} />
+        <select
+          defaultValue={500}
+          onChange={(e) => setSpeed(Number(e.currentTarget.value))}
+        >
+          <option value={1000}>1초</option>
+          <option value={500}>0.5초</option>
+          <option value={100}>0.1초</option>
+          <option value={10}>0.01초</option>
+          <option value={5}>0.005초</option>
+          <option value={1}>0.001초</option>
+          <option value={0.5}>0.0005초</option>
+        </select>
+        <input type="button" value="시작" onClick={start} />
+        <input type="button" value="종료" onClick={end} />
         <div>내 번호 : {myNumber.join(", ")}</div>
         <div>쓴 돈 : ₩ {moneySpent.toLocaleString()}</div>
+        <div>시도 : {moneySpent / 1000}</div>
         <ol>
-          <li>1등 : {result[0]}</li>
-          <li>2등 : {result[1]}</li>
-          <li>3등 : {result[2]}</li>
-          <li>4등 : {result[3]}</li>
-          <li>5등 : {result[4]}</li>
-          <li>꽝 : {result[5]}</li>
+          <li>
+            1등 : {result[0]} 확률 :{" "}
+            {((result[0] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
+          <li>
+            2등 : {result[1]} 확률 :{" "}
+            {((result[1] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
+          <li>
+            3등 : {result[2]} 확률 :{" "}
+            {((result[2] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
+          <li>
+            4등 : {result[3]} 확률 :{" "}
+            {((result[3] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
+          <li>
+            5등 : {result[4]} 확률 :{" "}
+            {((result[4] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
+          <li>
+            꽝 : {result[5]} 확률 :{" "}
+            {((result[5] / (moneySpent / 1000)) * 100).toFixed(4)} %
+          </li>
         </ol>
       </div>
     </div>
