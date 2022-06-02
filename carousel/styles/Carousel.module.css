@@ -6,6 +6,22 @@
   display: flex;
 }
 
+.slide:nth-child(1) {
+  background-color: red;
+}
+
+.slide:nth-child(2) {
+  background-color: blue;
+}
+
+.slide:nth-child(3) {
+  background-color: yellow;
+}
+
+.slide:nth-child(4) {
+  background-color: chartreuse;
+}
+
 .slide {
   position: absolute;
   width: 100%;

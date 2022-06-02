@@ -6,9 +6,26 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const dummy: DataArrayProps[] = [
-    { id: 1, text: "first", imgUrl: "" },
-    { id: 2, text: "sec", imgUrl: "" },
-    { id: 3, text: "third", imgUrl: "" },
+    {
+      id: 1,
+      text: "firstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirst",
+      imgUrl: "",
+    },
+    {
+      id: 2,
+      text: "secondsecondsecondsecondsecondsecondsecondsecondsecondsecondsecondsecondsecondsecond",
+      imgUrl: "",
+    },
+    {
+      id: 3,
+      text: "thirdthirdthirdthirdthirdthirdthirdthirdthirdthirdthirdthird",
+      imgUrl: "",
+    },
+    {
+      id: 4,
+      text: "fourthfourthfourthfourthfourthfourthfourthfourthfourthfourthfourthfourthfourth",
+      imgUrl: "",
+    },
   ];
 
   return (
