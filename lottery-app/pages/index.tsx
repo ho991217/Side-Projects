@@ -1,3 +1,37 @@
+/*
+  로또 규칙
+  1 ~ 45 까지의 숫자 중 6개를 뽑는다.
+  1회에 1000원
+
+  당첨번호 => 6개의 숫자 + 보너스 숫자
+
+  내가 뽑은 6개의 숫자 중
+  6개 전부 당첨번호에 포함되어 있으면 1등
+  5개 맞고, 보너스 숫자 맞으면 2등
+  5개 맞고, 보너스 숫자 틀리면 3등
+  4개 맞고, 보너스 숫자 틀리면 4등
+  3개 맞고, 보너스 숫자 틀리면 5등
+  그 외 꽝
+
+
+  알고리즘 ->
+  1. 당첨번호 + 보너스 번호 생성
+  2. 내가 뽑은 번호 생성
+  3. 내가 뽑은 번호와 당첨번호 비교
+  4. 몇 등인지 판단
+
+  랜덤 넘버 생성 함수
+  Math.random() -> 0 ~ 1 사이의 실수
+  Math.floor()
+  Math.ceil()
+
+  iterable 객체 = a
+
+  a.include(인자)
+  a.indexOf(인자)
+  a.some(인자)
+*/
+
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState, useEffect } from "react";
